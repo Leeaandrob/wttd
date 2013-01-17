@@ -15,4 +15,5 @@ urlpatterns = patterns('eventex.core.views',
     # Uncomment the next line to enable the admin:
     # url(r'^admin/', include(admin.site.urls)),
 	url(r'^$', 'homepage', name='homepage'),
+	url(r'^dir/index.html$', 'index_alexandre', name='index_alexandre'),
 )
