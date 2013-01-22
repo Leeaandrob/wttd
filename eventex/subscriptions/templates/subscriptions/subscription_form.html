@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Formulário de Inscrição</h1>
+        <form action="." method="post">
+            {% csrf_token %}
+            <p>
+                <label for="{{ form.name.id_for_label }}">{{ form.name.label }}</label>
+                {{ form.name }}
+                {{ form.name.errors }}
+            </p>
+
+            <p>
+                <label for="{{ form.cpf.id_for_label }}">{{ form.cpf.label }}</label>
+                {{ form.cpf }}
+                {{ form.cpf.errors }}
+            </p>
+
+            <p>
+                <label for="{{ form.email.id_for_label }}">{{ form.email.label }}</label>
+                {{ form.email }}
+                {{ form.email.errors }}
+            </p>
+
+            <p>
+                <label for="{{ form.name.id_for_label }}">{{ form.phone.label }}</label>
+                {{ form.phone }}
+                {{ form.phone.errors }}
+            </p>
+            <input type="submit" value="Registrar" class="btn btn-large btn-primary" />
+        </form>
+{% endblock content %}

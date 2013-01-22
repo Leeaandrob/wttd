@@ -4,7 +4,7 @@ from django.conf.urls import patterns, include, url
 # from django.contrib import admin
 # admin.autodiscover()
 
-urlpatterns = patterns('eventex.core.views',
+urlpatterns = patterns('',
     # Examples:
     # url(r'^$', 'eventex.views.home', name='home'),
     # url(r'^eventex/', include('eventex.foo.urls')),
@@ -14,6 +14,8 @@ urlpatterns = patterns('eventex.core.views',
 
     # Uncomment the next line to enable the admin:
     # url(r'^admin/', include(admin.site.urls)),
-	url(r'^$', 'homepage', name='homepage'),
-	url(r'^dir/index.html$', 'index_alexandre', name='index_alexandre'),
+	url(r'^$', 'eventex.core.views.homepage', name='homepage'),
+	url(r'^inscricao/$', 'eventex.subscriptions.views.subscribe', name='subscribe'),
+    url(r'^inscricao/(\d+)/$', 'eventex.subscriptions.views.success', name = 'success'),
+	url(r'^dir/index.html$', 'eventex.core.views.index_alexandre', name='index_alexandre'),
 )

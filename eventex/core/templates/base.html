@@ -1,0 +1,43 @@
+<!DOCTYPE"HTML"PUBLIC""b//W3C//DTD"HTML"4.01//EN">
+<html>
+   <head>
+      <title>EventeX</title>
+      
+      <link type="text/css" href="{{STATIC_URL}}css/bootstrap-responsive.min.css"
+         rel="stylesheet" media="screen"/>
+      <link type="text/css" href="{{STATIC_URL}}css/bootstrap.min.css"
+         rel="stylesheet" media="screen"/>
+
+      <script src="http://code.jquery.com/jquery-latest.js"></script>
+      <script type="text/javascript" src="{{STATIC_URL}}js/bootstrap.min.js"></script>    
+   </head>
+   <body>
+       <div class="container fixed">
+         <h3>
+            <a href="/" class="brand">
+               <img src="{{STATIC_URL}}img/logo.png" />
+            </a>
+         </h3>
+
+         <div class="navbar">
+            <div class="navbar-inner">
+               <a href="/" class="brand">
+                  EventeX
+               </a>
+               <ul class="nav pills">
+                  <li class="divider-vertical">
+                     <a href="/inscricao/">Inscrição</a>
+                  </li>
+               </ul>
+            </div>
+         </div>
+
+
+         <div class="well">
+            {% block content %}
+            {% endblock content %}
+         </div>
+         <p class="pull-right">© 2013. EventeX, some rights reserved.</p>
+      </div>
+   </body>
+</html>h
