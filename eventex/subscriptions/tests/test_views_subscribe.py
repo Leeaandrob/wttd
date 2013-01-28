@@ -10,11 +10,12 @@ Replace this with more appropriate tests for your application.
 from django.test import TestCase
 from eventex.subscriptions.forms import SubscriptionForm
 from eventex.subscriptions.models import Subscription
+from django.core.urlresolvers import reverse as r
 
 
 class SubcribeTest(TestCase):
     def setUp(self):
-        self.resp = self.client.get('/inscricao/')
+        self.resp = self.client.get(r('subscriptions:subscribe'))
 
     def test_get(self):
         'GET / inscricao/ must return status code 200'
@@ -43,7 +44,7 @@ class SubscriberPostTest(TestCase):
     def setUp(self):
         data = dict(name = 'Élysson MR', cpf = '09876543210', 
             email = "elyssonmr@gmail.com", phone = '35-12345678')
-        self.resp = self.client.post('/inscricao/', data)
+        self.resp = self.client.post(r('subscriptions:subscribe'), data)
 
     def test_post(self):
         'Valid Post should redirect to /inscricao/1'
@@ -57,7 +58,7 @@ class SubscriberInvalidPostTest(TestCase):
     def setUp(self):
         data = dict(name = 'Élysson MR', cpf = '000000000012',
             email = 'elyssonmr@gmail.com', phone = '35-12345678')
-        self.resp = self.client.post('/inscricao/', data)
+        self.resp = self.client.post(r('subscriptions:subscribe'), data)
 
     def test_post(self):
         'Invalid Post should not redirect'

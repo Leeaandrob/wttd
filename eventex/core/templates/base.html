@@ -21,12 +21,12 @@
 
          <div class="navbar">
             <div class="navbar-inner">
-               <a href="/" class="brand">
+               <a href="{% url core:homepage %}" class="brand">
                   EventeX
                </a>
                <ul class="nav pills">
                   <li class="divider-vertical">
-                     <a href="/inscricao/">Inscrição</a>
+                     <a href="{% url subscriptions:subscribe %}">Inscrição</a>
                   </li>
                </ul>
             </div>
